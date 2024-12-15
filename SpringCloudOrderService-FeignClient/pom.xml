@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>in.jai.Cloud</groupId>
-	<artifactId>SpringCloudCartService</artifactId>
+	<artifactId>SpringCloudOrderService-FeignClient</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringCloudCartService</name>
-	<description>SpringCloudCartService</description>
+	<name>SpringCloudOrderService-FeignClient</name>
+	<description>SpringCloudOrderService-FeignClient</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -38,6 +38,10 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 
 		<dependency>
