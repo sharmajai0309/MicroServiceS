@@ -23,6 +23,9 @@ public class OrderRestController {
 	@Value("${server.port}")
 	private String portNo;
 	
+//	@Value("${my.app.title}")
+//	private String info;
+	
 	/*
 	 * METHOD  : GET
 	 * PATH    : /place
@@ -32,6 +35,8 @@ public class OrderRestController {
 	 */
 	@Autowired
 	private ICartConsumer consumer;
+	
+	
 	
 	@GetMapping("/place")
 	public ResponseEntity<String> placeOrder() {
@@ -52,6 +57,7 @@ public class OrderRestController {
 	    String response = "PORT NO OF ORDER IS :: " + portNo + " ORDER WITH CART DATA => " + cartResponse;
 	    return ResponseEntity.ok(response);
 	}
+	
 	
 	
 	@GetMapping("/list")
