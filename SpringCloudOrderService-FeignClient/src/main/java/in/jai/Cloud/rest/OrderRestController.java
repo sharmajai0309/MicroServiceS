@@ -23,8 +23,8 @@ public class OrderRestController {
 	@Value("${server.port}")
 	private String portNo;
 	
-//	@Value("${my.app.title}")
-//	private String info;
+	@Value("${my.app.title}")
+	private String info;
 	
 	/*
 	 * METHOD  : GET
@@ -59,11 +59,17 @@ public class OrderRestController {
 	}
 	
 	
-	
+	/*
+	 * METHOD  : GET
+	 * PATH    : /fetch
+	 * OUTPUT  : R.E<String>
+	 * URL     : http://localhost:7777/v1/api/order/list
+	 * 
+	 */
 	@GetMapping("/list")
 	public ResponseEntity<String> fetchList(@RequestBody Cart cart){
 		String cartResponse = consumer.addToCartDetails(cart).getBody();
-		return ResponseEntity.ok(cartResponse);
+		return ResponseEntity.ok(cartResponse + info);
 	}
 	
 	

@@ -2,6 +2,7 @@ package in.jai.Cloud.rest;
 
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ import in.jai.Cloud.response.Cart;
 @RestController
 @RequestMapping("/v1/api/cart")
 @CrossOrigin(origins = "http://localhost:3000")
+@RefreshScope
 public class CartServiceController {
 	
 	@Value("${server.port}")
