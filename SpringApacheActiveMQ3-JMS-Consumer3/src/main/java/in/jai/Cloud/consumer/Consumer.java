@@ -9,7 +9,7 @@ public class Consumer {
 	
 	@JmsListener(destination = "${my.app.desti-name}")
 	public void readData(String data) {
-		System.out.println("message recieved from Queue MQ #1::"+data);
+		System.out.println("message recieved from Queue MQ #3::"+data);
 	}
 
 }
