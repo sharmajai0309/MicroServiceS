@@ -1,6 +1,6 @@
 package in.jai.Cloud.Routing;
 
-import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.RouteLocator; 
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,12 +8,18 @@ import org.springframework.context.annotation.Configuration;
 public class RoutingConfig {
 
 	public RouteLocator Routesconfiguration(RouteLocatorBuilder Rbuilder) {
-		Rbuilder
+		
+		// This Java configuration based routing in API GateWay
+		// Eureka Server will give the name of service that having minimum Load Factor
+		
+		
+		RouteLocator routeLocator = Rbuilder
 		.routes()
-		.route("",r->r.path("").uri(""))
-		.route("",r->r.path("").uri(""))
+		.route("CartServices", r->r.path("/v1/api/cart/**").uri("CART-SERVICE"))
+		.route("OrderService",r->r.path("/v1/api/order/**").uri("SpringCloudOrderService-FeignClient"))
 		.build();
-		return null;
+		
+		return routeLocator;
 		
 	}
 	
