@@ -1,10 +1,10 @@
-package in.jai.cloud;
+package com.Jai.Cloud;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringCloudCartServiceApplicationTests {
+class ApiGateWayApplicationTests {
 
 	@Test
 	void contextLoads() {
