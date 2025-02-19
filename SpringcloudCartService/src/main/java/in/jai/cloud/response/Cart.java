@@ -1,5 +1,5 @@
 
-package in.jai.cloud.response;
+package in.jai.Cloud.response;
 
 import lombok.AllArgsConstructor; 
 import lombok.Data;

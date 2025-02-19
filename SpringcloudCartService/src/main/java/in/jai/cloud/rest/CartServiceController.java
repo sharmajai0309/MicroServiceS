@@ -1,7 +1,7 @@
-package in.jai.cloud.rest;
+package in.jai.Cloud.rest;
 
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Value; 
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import in.jai.cloud.response.Cart;
+import in.jai.Cloud.response.Cart;
+
+
 
 
 @RestController
@@ -35,12 +38,16 @@ public class CartServiceController {
 	 * PATH    : /show
 	 * OUTPUT  : R.E<String>
 	 * URL     : /v1/api/cart/show
+	 * INPUT   : RequestHeader(TOKENID)
 	 */
 	
 	@GetMapping("/show")
-	 public ResponseEntity<String> getCartDetails() {
+	 public ResponseEntity<String> getCartDetails(
+			 @RequestHeader("Token")String Tokeninfo
+			 
+			 ) {
 	        // Example string
-	        String cartMessage = "Welcome to Cart Service!"+portNo+ "Date recived form"+ info;
+	        String cartMessage = "Welcome to Cart Service!"+portNo+ "Date recived form"+ info + "Token Id :"+Tokeninfo;
 
 	        return ResponseEntity.ok(cartMessage);
 	    }

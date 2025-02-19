@@ -41,7 +41,7 @@ public class OrderRestController {
 	@GetMapping("/place")
 	public ResponseEntity<String> placeOrder() {
 		String cartResponse = consumer.getCartInfo().getBody();
-		return ResponseEntity.ok("ORDER PLACED WITH => "+cartResponse);
+		return ResponseEntity.ok("ORDER PLACED WITH => "+cartResponse +"PortNumber :"+ portNo);
 	}
 
 	/*
