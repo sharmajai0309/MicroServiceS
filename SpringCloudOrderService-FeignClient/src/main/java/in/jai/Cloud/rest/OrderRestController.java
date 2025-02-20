@@ -61,7 +61,7 @@ public class OrderRestController {
 	
 	/*
 	 * METHOD  : GET
-	 * PATH    : /fetch
+	 * PATH    : /list
 	 * OUTPUT  : R.E<String>
 	 * URL     : http://localhost:7777/v1/api/order/list
 	 * 

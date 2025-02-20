@@ -7,10 +7,10 @@ import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class MyRoutingConfig {
 	
-	@Bean
+//	@Bean
 	public RouteLocator configureRoutes(RouteLocatorBuilder builder) {
 		return builder.routes()
 				.route("CartDetails", r -> r
@@ -20,8 +20,10 @@ public class MyRoutingConfig {
 						.uri("lb://CART-SERVICE")) // Use load balancing
 
 				.route("OrderDetails", r -> r
-						.path("/v1/api/order/**")  // Allow subpaths
-						.uri("lb://SpringCloudOrderService")) // Use load balancing
+					    .path("/v1/api/order/**")
+					    .filters(f -> f.addRequestHeader("X-Request-Id", "12345")) // Example header
+					    .uri("lb://SpringCloudOrderService"))
+				// Use load balancing
 				.build();
 	}
 }
