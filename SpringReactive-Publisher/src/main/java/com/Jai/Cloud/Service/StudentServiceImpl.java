@@ -44,4 +44,25 @@ public class StudentServiceImpl implements IStudentService {
 		return repo.deleteById(id).switchIfEmpty(Mono.empty());
 	}
 
+	@Override
+	public Flux<Student> findStudentByname(String name) {
+		
+		Flux<Student> Studentlist = repo.findByName(name);
+		
+		return Studentlist;
+	}
+
+	@Override
+	public Mono<Void> deleteByName(String name) {
+	    return repo.findByName(name)  // Returns Flux<Student>
+	        .collectList()            // Collects all students into a List<Student>
+	        .map(list -> {
+	            list.forEach(student -> repo.deleteById(student.getId()).subscribe());
+	            return list;
+	        })
+	        .then(); // Ensures we return Mono<Void>
+	}
+
+
+
 }

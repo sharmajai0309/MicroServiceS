@@ -12,6 +12,8 @@ public interface IStudentService {
 	public Mono<Student> getOneStudentInfo(String id);
 	public Flux<Student> findAllStudent();
 	public Mono<Void> deleteStudent(String id);
+	public Flux<Student> findStudentByname(String name);
+	public Mono<Void> deleteByName(String name);
 	
 	
 	
