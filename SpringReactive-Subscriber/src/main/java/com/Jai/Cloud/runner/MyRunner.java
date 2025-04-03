@@ -22,10 +22,6 @@ public class MyRunner implements CommandLineRunner {
 //		findall();
 //		findStudent("32");
 		deleteStudent("32");
-		
-		
-		
-	
 	}
 	public void create() {
 		/*
@@ -42,7 +38,6 @@ public class MyRunner implements CommandLineRunner {
 		result.subscribe(System.out::println);
 		
 	}
-	
 	public void findall() {
 		
 		/*
@@ -62,9 +57,6 @@ public class MyRunner implements CommandLineRunner {
 				
 		       
 		}
-	
-	
-	
 	public void findStudent(String studentId) {
 	    WebClient wc2 = WebClient.create("http://localhost:9999/v1/api/Student");
 
@@ -82,8 +74,6 @@ public class MyRunner implements CommandLineRunner {
 	    
 	    System.out.println(subscribe);
 	}
-	
-	
 	public void deleteStudent(String id) {
 	    WebClient wc3 = WebClient.create("http://localhost:9999/v1/api/Student");
 
@@ -97,6 +87,8 @@ public class MyRunner implements CommandLineRunner {
 	        .subscribe();
 
 	    System.out.println("Delete request sent for student: " + id);
+	    
+	    
 	}
 
 
